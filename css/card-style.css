@@ -1,0 +1,21 @@
+.allCards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 166px;
+  justify-content: center;
+}
+
+.card {
+  width: 130px;
+  margin: 10px;
+}
+
+div.card-front > img {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
