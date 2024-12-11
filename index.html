@@ -49,6 +49,9 @@
             </div>
           </li>
         </ul>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#gameRulesModal">
+          Show Game Rules
+        </button>
       </div>
     </div>
     <div class="allCards">
@@ -198,21 +201,36 @@
       </div>
     </div>
 
-    <div class="”modal”">
-      <h3>GAME RULES</h3>
-      <p>Match all pairs to win!</p>
-      <ul>
-        <li>🖱️ <strong>Click:</strong> two cards to flip them over.</li>
-        <li>✅ <strong>Match:</strong> Cards disappear.</li>
-        <li>❌ <strong>No Match:</strong> Cards flip back.</li>
-        <li>🧩 <strong>Complete the grid to finish the game!</strong></li>
-      </ul>
-      <h2>📈 Difficulty Levels</h2>
-      <ul>
-        <li><strong>Beginner:</strong> 🟩 Small grid (8 pairs)</li>
-        <li><strong>Intermediate:</strong> 🟦 Medium grid (12 pairs)</li>
-        <li><strong>Advanced:</strong> 🟥 Large grid (18 pairs)</li>
-      </ul>
+    <div class="modal" tabindex="-1" id="gameRulesModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Match all pairs to win!</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class =”modal-body”>
+              <p class = "text-center h3"> Game Rules</p>
+              <ul>
+              <li>🖱️ <strong>Click:</strong> two cards to flip them over.</li>
+              <li>✅ <strong>Match:</strong> Cards disappear.</li>
+              <li>❌ <strong>No Match:</strong> Cards flip back.</li>
+              <li>🧩 <strong>Complete the grid to finish the game!</strong></li>
+            </div>
+            <div class ="modal-body">
+              <hr class="grey-line">
+              </ul>
+                <h2>📈 Difficulty Levels</h2>
+              <ul>
+                <li><strong>Beginner:</strong> 🟩 Small grid (8 pairs)</li>
+                <li><strong>Intermediate:</strong> 🟦 Medium grid (12 pairs)</li>
+                <li><strong>Advanced:</strong> 🟥 Large grid (18 pairs)</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+            
+          </div>
+        </div>  
+      </div>
     </div>
 
     <script src="./js/script.js"></script>
