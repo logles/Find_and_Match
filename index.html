@@ -15,6 +15,12 @@
       <div class="container">
         <ul class="nav justify-content-center">
           <li class="nav-item flex-fill">
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#gameRulesModal"
+              style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: 1.3rem;">
+                Game Rules
+              </button>
+          </li>
+          <li class="nav-item flex-fill">
             <p class="h2">Attempts: <span class="badge text-bg-secondary" id="attemptsTracker">0</span></p>
           </li>
           <li class="nav-item flex-fill">
@@ -23,7 +29,7 @@
           <li class="nav-item flex-fill">
             <div class="dropdown-center container">
               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-              style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: 1.2rem;">
+              style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: 1.3rem;">
                     Difficulty
               </button>
               <ul class="dropdown-menu" id="difficultyMenu">
@@ -34,9 +40,6 @@
             </div>
           </li>
         </ul>
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#gameRulesModal">
-          Show Game Rules
-        </button>
       </div>
     </div>
     <div class="allCards">
