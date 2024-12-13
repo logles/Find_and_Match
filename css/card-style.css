@@ -5,10 +5,11 @@
 .allCards {
   display: grid;
   gap: 1vw;
-  padding: 5vw;
-  grid-template-columns: repeat(4, 1fr);
+  padding: 2vw;
+  justify-content: center;
+  grid-template-columns: repeat(4, minmax(0, 20vh));
   max-height: 90vh;
-  overflow: auto;  
+  overflow: hidden;  
 }
 
 .card {
