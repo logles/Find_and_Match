@@ -13,24 +13,24 @@
     <div class="p-3 mb-2 bg-dark text-white text-center container-fluid">
       <h1 class="container">Card Matching Game</h1>
       <div class="container">
-        <ul class="nav justify-content-center text-wrap">
-          <li class="nav-item flex-fill">
-              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#gameRulesModal"
+        <ul class="nav row justify-content-center text-wrap responsiveHeight">
+          <li class="nav-item col-12 col-sm-6 col-md-3 d-flex justify-content-center mb-2">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#gameRulesModal"
               style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: 1.3rem;">
-                Game Rules
-              </button>
+              Game Rules
+            </button>
           </li>
-          <li class="nav-item flex-fill">
+          <li class="nav-item col-12 col-sm-6 col-md-3 d-flex justify-content-center mb-2">
             <p class="h2">Attempts: <span class="badge text-bg-secondary" id="attemptsTracker">0</span></p>
           </li>
-          <li class="nav-item flex-fill">
+          <li class="nav-item col-12 col-sm-6 col-md-3 d-flex justify-content-center mb-2">
             <p class="h2">High Score: <span class="badge text-bg-secondary" id="highscoreTracker">0</span></p>
           </li>
-          <li class="nav-item flex-fill">
-            <div class="dropdown-center container">
+          <li class="nav-item col-12 col-sm-6 col-md-3 d-flex justify-content-center mb-2">
+            <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-              style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: 1.3rem;">
-                    Difficulty
+                style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: 1.3rem;">
+                Difficulty
               </button>
               <ul class="dropdown-menu" id="difficultyMenu">
                 <li><button class="dropdown-item" type="button" id="easy">Easy</button></li>
@@ -42,7 +42,8 @@
         </ul>
       </div>
     </div>
-    <div class="allCards container-flow">
+    
+    <div class="allCards">
       <div class="card">
         <div class="card-inner">
           <div class="card-front"><img src="" alt="Card Front" /></div>
@@ -171,23 +172,7 @@
           </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front"><img src="" alt="Card Front" /></div>
-          <div class="card-back">
-            <img src="css/assets/shape9.png" alt="Card Back" />
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-inner">
-          <div class="card-front"><img src="" alt="Card Front" /></div>
-          <div class="card-back">
-            <img src="css/assets/shape9.png" alt="Card Back" />
-          </div>
-        </div>
-      </div>
-
+    </div>
     <div class="modal" tabindex="-1" id="gameRulesModal">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">

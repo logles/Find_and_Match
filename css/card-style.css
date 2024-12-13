@@ -3,19 +3,16 @@
 }
 
 .allCards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
+  display: grid;
+  gap: 1vw;
+  padding: 5vw;
+  grid-template-columns: repeat(4, 1fr);
+  max-height: 90vh;
+  overflow: auto;  
 }
 
 .card {
-  width: 48vw;
-  margin: 1vw;
-  display: flex;
-  flex-direction: column;
-
+  border: 1px solid black;
 }
 
 div.card-front > img {
