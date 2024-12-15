@@ -18,8 +18,11 @@ function cardFlipping() {
 
   cards.forEach(function (card) {
     card.addEventListener("click", function () {
-      card.classList.toggle("flipped");
-      attempts += 1;
+      card.classList.add("flipped");
+      if(!card.classList.contains("guess")){
+        attempts += 1;
+      };
+      card.classList.add("guess");
 
       if (attempts % 2 === 0) {
         attemptsTracker.textContent = attempts / 2;
@@ -29,10 +32,6 @@ function cardFlipping() {
 }
 
 cardFlipping();
-
-//create a function that updates the page based on the difficulty selected
-
-let difficulty;
 
 //TODO: Create a function which recognizes when a pair is found and hides the found pair
 
