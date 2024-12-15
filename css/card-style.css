@@ -1,13 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
 .allCards {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 166px;
+  display: grid;
+  gap: 1vw;
+  padding: 2vw;
   justify-content: center;
+  grid-template-columns: repeat(4, minmax(0, 20vh));
+  max-height: 90vh;
+  overflow: auto;  
 }
 
 .card {
-  width: 15%;
-  margin: 10px;
+  border: 1px solid black;
 }
 
 div.card-front > img {
