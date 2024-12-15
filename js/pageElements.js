@@ -4,6 +4,7 @@ const easyButton = document.querySelector("#easy");
 const mediumButton = document.querySelector("#medium");
 const hardButtom = document.querySelector("#hard");
 const difficultyMenu = document.querySelector("#difficultyMenu");
+const beginMsg = document.querySelector('#begin')
 const easyCards = document.querySelectorAll(
   "#card1, #card2, #card3, #card4, #card5, #card6, #card7, #card8"
 );
@@ -26,7 +27,8 @@ document
 
     if (element.matches("button")) {
       const difficulty = element.textContent;
-
+      beginMsg.style.display = "none";
+      
       if (difficulty === "Easy") {
         chosenDifficulty = "Easy";
         easyCards.forEach(function (card) {
