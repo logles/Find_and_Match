@@ -1,4 +1,3 @@
-//TODO: Create a function to shuffle the cards upon page reset
 document.addEventListener("DOMContentLoaded", shuffleCards);
 
 function shuffleCards() {
@@ -8,9 +7,6 @@ function shuffleCards() {
     .sort(() => Math.random() - 0.5); 
   shuffledCards.forEach(card => cardContainer.appendChild(card));
 }
-//TODO: Create a function which flips a card when it is clicked on
-
-//TODO: Create a function which flips a card when it is clicked on AND counts how many attempts have been and logs them in the navigation
 
 let attempts = 0;
 function cardFlipping() {
@@ -18,15 +14,21 @@ function cardFlipping() {
 
   cards.forEach(function (card) {
     card.addEventListener("click", function () {
-      card.classList.add("flipped");
-      if(!card.classList.contains("guess")){
+      if(!card.classList.contains("guess") && !card.classList.contains("freeze")){
+        card.classList.add("flipped");
         attempts += 1;
+        card.classList.add("guess");
+        console.log("card clicked")
       };
-      card.classList.add("guess");
-
-      if (attempts % 2 === 0) {
+      if (attempts % 2 === 0 && !card.classList.contains("freeze")) {
+        console.log ("even attempts")
         attemptsTracker.textContent = attempts / 2;
-      }
+        cards.forEach((card) => card.classList.add("freeze"))
+        setTimeout(flipBack, 1000);
+        function flipBack() {
+        cards.forEach((card) => card.classList.remove("flipped", "guess", "freeze"))
+        console.log("flipBack successful")
+        }};
     });
   });
 }
