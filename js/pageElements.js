@@ -11,7 +11,7 @@ const mediumCards = document.querySelectorAll(
   "#card9, #card10, #card11, #card12"
 );
 const hardCards = document.querySelectorAll(
-  "#card13, #card14, #card14, #card16, #card17, #card18"
+  "#card13, #card14, #card15, #card16"
 );
 console.log(easyCards);
 console.log(mediumCards);
