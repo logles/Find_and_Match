@@ -9,7 +9,7 @@
   justify-content: center;
   grid-template-columns: repeat(4, minmax(0, 20vh));
   max-height: 90vh;
-  overflow: hidden;  
+  overflow: auto;  
 }
 
 .card {
