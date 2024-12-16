@@ -1,10 +1,13 @@
 const attemptsTracker = document.querySelector("#attemptsTracker");
-const highscoreTracker = document.querySelector("#highscoreTracker");
+const winsTracker = document.querySelector("#winsTracker");
 const easyButton = document.querySelector("#easy");
 const mediumButton = document.querySelector("#medium");
 const hardButtom = document.querySelector("#hard");
 const difficultyMenu = document.querySelector("#difficultyMenu");
-const beginMsg = document.querySelector('#begin')
+const beginMsg = document.querySelector('#begin');
+const easyWins = document.querySelector('#easyWins');
+const mediumWins = document.querySelector('#mediumWins');
+const hardWins = document.querySelector('#hardWins');
 const easyCards = document.querySelectorAll(
   "#card1, #card2, #card3, #card4, #card5, #card6, #card7, #card8"
 );
@@ -28,7 +31,7 @@ document
     if (element.matches("button")) {
       const difficulty = element.textContent;
       beginMsg.style.display = "none";
-      
+
       if (difficulty === "Easy") {
         chosenDifficulty = "Easy";
         easyCards.forEach(function (card) {
