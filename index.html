@@ -10,43 +10,51 @@
   </head>
   <body>
     <div class="p-3 mb-2 bg-dark text-white text-center container-fluid">
-      <h1 class="container">Card Matching Game</h1>
       <div class="container">
-        <ul class="nav row text-wrap responsiveHeight">
-          <li class="nav-item col-12 col-sm-6 col-md-3 d-flex justify-content-center mb-2">
-            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#gameRulesModal"
-              style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: 1.3rem;">
-              Game Rules
-            </button>
-          </li>
-          <li class="nav-item col-12 col-sm-6 col-md-3 d-flex justify-content-center mb-2">
-            <p class="h2">Attempts: <span class="badge text-bg-secondary" id="attemptsTracker">0</span></p>
-          </li>
-          <li class="nav-item col-12 col-sm-6 col-md-3 d-flex justify-content-center mb-2">
-            <p class="h2">High Score: <span class="badge text-bg-secondary" id="highscoreTracker">0</span></p>
-          </li>
-          <li class="nav-item col-12 col-sm-6 col-md-3 d-flex justify-content-center mb-2">
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: 1.3rem;">
-                Difficulty
-              </button>
-              <ul class="dropdown-menu" id="difficultyMenu">
-                <li><button class="dropdown-item" type="button" id="easy">Easy</button></li>
-                <li><button class="dropdown-item" type="button" id="medium">Medium</button></li>
-                <li><button class="dropdown-item" type="button" id="hard">Hard</button></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+        <h1>Card Matching Game</h1>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"
+        style="display: none;">Dev Tools</button>
+      </div>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <ul class="nav w-100 justify-content-evenly d-flex">
+                <li class="nav-item ">
+                  <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#gameRulesModal"
+                    style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: 1.3rem;">
+                    Game Rules
+                  </button>
+                </li>
+                <li class="nav-item flex-shrink-1">
+                  <p class="h2 text-nowrap">Attempts: <span class="badge text-bg-secondary" id="attemptsTracker">0</span></p>
+                </li>
+                <li class="nav-item flex-shrink-1">
+                  <p class="h2 text-nowrap">Total Wins: <span class="badge text-bg-secondary" id="winsTracker">0</span></p>
+                </li>
+                <li class="nav-item flex-shrink-1">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                      style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: 1.3rem;">
+                      Difficulty
+                    </button>
+                    <ul class="dropdown-menu" id="difficultyMenu">
+                      <li><button class="dropdown-item" type="button" id="easy">Easy</button></li>
+                      <li><button class="dropdown-item" type="button" id="medium">Medium</button></li>
+                      <li><button class="dropdown-item" type="button" id="hard">Hard</button></li>
+                    </ul>
+                  </div>
+                </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </div>
     
-  <div class="container" id="begin">
+    <div class="container" id="begin">
     <p class="fs-3 text-center">Select a <span class="badge text-bg-secondary fw-normal">Difficulty</span> to begin!</p>
-  </div>
+    </div>
 
-    <div class="allCards">
+    <div class="allCards scrollable-content">
       <div class="card" id="card1">
         <div class="card-inner">
           <div class="card-front"><img src="" alt="Card Front" /></div>
@@ -181,7 +189,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title">Match all pairs to win!</h2>
+            <h5 h2-md class="modal-title">Match all pairs to win!</h5 h2-md>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class =”modal-body”>
@@ -195,7 +203,7 @@
             <div class ="modal-body">
               <hr class="grey-line">
               </ul>
-                <h2>📈 Difficulty Levels</h2>
+                <h5 h2-md>📈 Difficulty Levels</h5 h2-md>
               <ul>
                 <li><strong>Beginner:</strong> 🟩 Small grid (8 pairs)</li>
                 <li><strong>Intermediate:</strong> 🟦 Medium grid (12 pairs)</li>
@@ -207,8 +215,45 @@
         </div>  
       </div>
     </div>
-    <script src="./js/script.js"></script>
+
+    <div class="offcanvas offcanvas-start bg-dark text-white" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="offcanvasScrollingLabel">Score Editor</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" id="devMenu">
+        <p class="fs-3">Easy
+          <button class="btn btn-secondary btn-sm" id="easyDec" type="button">-1</button>
+          <button class="btn btn-secondary btn-sm" id="easyInc" type="button">+1</button>
+        </p>
+        <p class="fs-3">Medium
+          <button class="btn btn-secondary btn-sm" id="mediumDec" type="button">-1</button>
+          <button class="btn btn-secondary btn-sm" id="mediumInc" type="button">+1</button>
+        </p>
+        <p class="fs-3">Hard
+          <button class="btn btn-secondary btn-sm" id="hardDec" type="button">-1</button>
+          <button class="btn btn-secondary btn-sm" id="hardInc" type="button">+1</button>
+        </p>
+        <button class="btn btn-danger btn-sm" id="resetScore" type="button">Reset</button>
+      </div>
+    </div>
+
+    <div class="bg-dark text-white text-center d-flex justify-content-center position-absolute bottom-0 container-fluid">
+      <ul class="d-flex justify-content-evenly align-items-center flex-wrap w-75 w-md-100" style="margin: 0; padding: 0; list-style: none; gap: 15px;">
+        <li class="d-flex align-items-center justify-content-center flex-shrink-1" style="min-width: 0;">
+          <p class="h5 h2-md m-0 d-flex align-items-center">Easy Wins: <span class="badge text-bg-secondary" id="easyWins">0</span></p>
+        </li>
+        <li class="d-flex align-items-center justify-content-center flex-shrink-1" style="min-width: 0;">
+          <p class="h5 h2-md m-0 d-flex align-items-center">Medium Wins: <span class="badge text-bg-secondary" id="mediumWins">0</span></p>
+        </li>
+        <li class="d-flex align-items-center justify-content-center flex-shrink-1" style="min-width: 0;">
+          <p class="h5 h2-md m-0 d-flex align-items-center">Hard Wins: <span class="badge text-bg-secondary" id="hardWins">0</span></p>
+        </li>
+      </ul>
+    </div>
+
     <script src="./js/pageElements.js" defer></script>
+    <script src="./js/script.js"></script>
     <!--Bootstrap JavaScript Link-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
