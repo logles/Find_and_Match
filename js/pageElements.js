@@ -22,6 +22,8 @@ console.log(mediumCards);
 console.log(hardCards);
 
 let chosenDifficulty = "";
+let currentScore = 0;
+let scoreToWIn = 0;
 
 document
   .querySelector("#difficultyMenu")
@@ -34,6 +36,7 @@ document
 
       if (difficulty === "Easy") {
         chosenDifficulty = "Easy";
+        scoreToWIn = 4;
         easyCards.forEach(function (card) {
           card.style.display = "block";
         });
@@ -46,6 +49,7 @@ document
       }
       if (difficulty === "Medium") {
         chosenDifficulty = "Medium";
+        scoreToWIn = 6;
         easyCards.forEach(function (card) {
           card.style.display = "block";
         });
@@ -58,6 +62,7 @@ document
       }
       if (difficulty === "Hard") {
         chosenDifficulty = "Hard";
+        scoreToWIn = 8;
         easyCards.forEach(function (card) {
           card.style.display = "block";
         });
@@ -71,4 +76,6 @@ document
     }
 
     console.log(chosenDifficulty);
+    console.log(`Score to win is ${scoreToWIn}`);
+    
   });
