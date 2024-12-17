@@ -46,6 +46,11 @@ img {
   transform: rotateY(180deg);
 }
 
+
+.card.matched {
+  background-color: #00aa00;
+}
+
 /*mobile responsive*/
 @media screen and (max-width: 767px) {
   button.btn.btn-secondary.dropdown-toggle,
@@ -76,3 +81,4 @@ img {
     margin: 3px;
   }
 }
+
