@@ -9,6 +9,7 @@ function shuffleCards() {
 }
 
 let attempts = 0;
+let firstGuess = ""
 function cardFlipping() {
   const cards = document.querySelectorAll(".card");
 
@@ -18,12 +19,23 @@ function cardFlipping() {
         card.classList.add("flipped");
         attempts += 1;
         card.classList.add("guess");
-        console.log("card clicked")
+        if(attempts % 2 !== 0) {
+          firstGuess = card.className.split(" ")[1]
+        }
+        console.log(firstGuess)
       };
       if (attempts % 2 === 0 && !card.classList.contains("freeze")) {
         console.log ("even attempts")
         attemptsTracker.textContent = attempts / 2;
         cards.forEach((card) => card.classList.add("freeze"))
+        const secondGuess = card.className.split(" ")[1]
+        console.log(secondGuess)
+        if(firstGuess === secondGuess) {
+          console.log("Matched!")
+        }
+        else{
+          console.log("Does not match")
+        }
         setTimeout(flipBack, 1000);
         function flipBack() {
         cards.forEach((card) => card.classList.remove("flipped", "guess", "freeze"))
