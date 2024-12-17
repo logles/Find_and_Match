@@ -32,9 +32,13 @@ function cardFlipping() {
         console.log(secondGuess);
         cards.forEach(function (card) {
           if(card.classList.contains("guess") && firstGuess === secondGuess){
+            currentScore++ ;
+            console.log(`Score to win is ${scoreToWIn}, you currently have ${currentScore}`);
+            checkWin()
             card.classList.add("matched")
           }
         })
+
         setTimeout(flipBack, 1000);
           function flipBack() {
             cards.forEach(function (card) {
@@ -77,10 +81,12 @@ function trackWins(){
 function loadWins(){
   let storedWins = JSON.parse(localStorage.getItem('storedWins'))
 
-  easyWins.textContent = storedWins.Easy
-  mediumWins.textContent = storedWins.Medium
-  hardWins.textContent = storedWins.Hard
-  winsTracker.textContent = storedWins.totalWins
+  if (storedWins !== null){
+    easyWins.textContent = storedWins.Easy
+    mediumWins.textContent = storedWins.Medium
+    hardWins.textContent = storedWins.Hard
+    winsTracker.textContent = storedWins.totalWins
+  }
 }
 
 cardFlipping();
@@ -88,7 +94,24 @@ cardFlipping();
 //TODO: Create a function which recognizes when a pair is found and hides the found pair
 
 //TODO: Create a function which recognizes when the user has won and logs the user's score in local memory
-
+function checkWin(){
+  if (currentScore >= scoreToWIn){
+    console.log("Congradulations!");
+    if (chosenDifficulty == 'Easy'){
+      currentWins.Easy++
+    }
+    if (chosenDifficulty == 'Medium'){
+      currentWins.Medium++
+    }
+    if (chosenDifficulty == 'Hard'){
+      currentWins.Hard++
+    }
+    currentScore = 0
+  }
+  currentWins.totalWins = currentWins.Easy + currentWins.Medium + currentWins.Hard
+  winsTracker.textContent = currentWins.totalWins
+  trackWins()
+}
 // for testing, add buttons to increase the wins for easy, medium, and hard then remove them once the function is created
 
 document.querySelector("#devMenu")
@@ -127,6 +150,18 @@ document.querySelector("#devMenu")
       if (elementID == 'hardInc'){
         currentWins.Hard++;
         hardWins.textContent = currentWins.Hard;
+      }
+      if (elementID == 'scoreDec'){
+        if (currentScore !== 0){
+          currentScore--
+          console.log(`Score to win is ${scoreToWIn}, you currently have ${currentScore}`);
+          checkWin()          
+        }
+      }
+      if (elementID == 'scoreInc'){
+        currentScore++
+        console.log(`Score to win is ${scoreToWIn}, you currently have ${currentScore}`);
+        checkWin()        
       }
       if (elementID == 'resetScore'){
         currentWins.Easy = 0;

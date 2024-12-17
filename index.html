@@ -13,7 +13,7 @@
       <div class="container">
         <h1>Card Matching Game</h1>
         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"
-        style="display: none;">Dev Tools</button>
+        >Dev Tools</button>
       </div>
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg">
@@ -234,6 +234,10 @@
           <button class="btn btn-secondary btn-sm" id="hardDec" type="button">-1</button>
           <button class="btn btn-secondary btn-sm" id="hardInc" type="button">+1</button>
         </p>
+        <p class="fs-3">Score (Choose Difficulty First!)
+          <button class="btn btn-secondary btn-sm" id="scoreDec" type="button">-1</button>
+          <button class="btn btn-secondary btn-sm" id="scoreInc" type="button">+1</button>
+        </p>
         <button class="btn btn-danger btn-sm" id="resetScore" type="button">Reset</button>
       </div>
     </div>
@@ -253,7 +257,7 @@
     </div>
 
     <script src="./js/pageElements.js" defer></script>
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js" defer></script>
     <!--Bootstrap JavaScript Link-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>

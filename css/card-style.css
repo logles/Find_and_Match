@@ -7,9 +7,9 @@
   gap: 1vw;
   padding: 2vw;
   justify-content: center;
-  grid-template-columns: repeat(4, minmax(0, 20vh));
-  max-height: 90vh;
-  overflow: auto;  
+  grid-template-columns: repeat(4, minmax(0, 17vh));
+  max-height: 80vh;
+  overflow: auto;
 }
 
 .card {
@@ -46,6 +46,39 @@ img {
   transform: rotateY(180deg);
 }
 
+
 .card.matched {
   background-color: #00aa00;
 }
+
+/*mobile responsive*/
+@media screen and (max-width: 767px) {
+  button.btn.btn-secondary.dropdown-toggle,
+  button.btn.btn-secondary {
+    --bs-btn-padding-y: 0rem !important;
+    --bs-btn-font-size: 1rem !important;
+  }
+  body
+    > div.bg-dark.text-white.text-center.d-flex.justify-content-center.position-absolute.bottom-0.container-fluid
+    > ul {
+    gap: 5px !important;
+  }
+
+  .h2,
+  .h2,
+  .h5,
+  body ul > li:nth-child(4) > div > button {
+    font-size: calc(0.9rem + 0.7vw);
+  }
+
+  body ul li:nth-child(3) {
+    order: 4;
+  }
+  body ul > li:nth-child(4) {
+    order: 3;
+  }
+  li.nav-item.flex-shrink-1 {
+    margin: 3px;
+  }
+}
+
