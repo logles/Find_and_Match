@@ -32,6 +32,10 @@ function cardFlipping() {
         console.log(secondGuess)
         if(firstGuess === secondGuess) {
           console.log("Matched!")
+          currentScore++ ;
+          console.log(`Score to win is ${scoreToWIn}, you currently have ${currentScore}`);
+          checkWin()
+
         }
         else{
           console.log("Does not match")
