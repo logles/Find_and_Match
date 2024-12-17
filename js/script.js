@@ -29,17 +29,23 @@ function cardFlipping() {
         attemptsTracker.textContent = attempts / 2;
         cards.forEach((card) => card.classList.add("freeze"))
         const secondGuess = card.className.split(" ")[1]
-        console.log(secondGuess)
-        if(firstGuess === secondGuess) {
-          console.log("Matched!")
-        }
-        else{
-          console.log("Does not match")
-        }
+        console.log(secondGuess);
+        cards.forEach(function (card) {
+          if(card.classList.contains("guess") && firstGuess === secondGuess){
+            card.classList.add("matched")
+          }
+        })
         setTimeout(flipBack, 1000);
-        function flipBack() {
-        cards.forEach((card) => card.classList.remove("flipped", "guess", "freeze"))
-        console.log("flipBack successful")
+          function flipBack() {
+            cards.forEach(function (card) {
+              if(!card.classList.contains("matched")){
+                card.classList.remove("flipped", "guess", "freeze")
+                console.log("flipBack successful")
+              }
+              else{
+                cards.forEach((card) => card.classList.remove("guess", "freeze"))
+              }})
+
         }};
     });
   });

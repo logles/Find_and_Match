@@ -45,3 +45,7 @@ img {
 .card.flipped .card-inner {
   transform: rotateY(180deg);
 }
+
+.card.matched {
+  background-color: #00aa00;
+}
