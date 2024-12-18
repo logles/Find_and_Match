@@ -32,9 +32,9 @@
 
 * Created a function which keeps track of the number of attempts the user has made
 
-* Create a function which recognizes when a pair is found and hides the found pair
+* Created a function which recognizes when a pair is found and hides the found pair
 
-* //TODO: Create a function which recognizes when the user has won and logs the user's score in local memory
+* Created a function which recognizes when the user has won and logs the user's score in local memory
 
 ## PageElements.JS
 
@@ -45,3 +45,10 @@
 * Inside the CSS you will find the Card-style for the cards to be able to be flipped and for them to be organized 
 
 * In the CSS inside the assests you will find the 9 Images for the matching card game 
+
+
+## Notes 
+
+*  This is our link to our Card Matching Game (https://logles.github.io/Find_and_Match/)
+
+*  This is how our Card Game looks! [SCREENSHOT](<CARD MATCHING GAME.png>)
