@@ -32,14 +32,14 @@ function cardFlipping() {
         console.log(secondGuess);
         cards.forEach(function (card) {
           if(card.classList.contains("guess") && firstGuess === secondGuess){
-            currentScore++ ;
+            currentScore += 0.5 ;
             console.log(`Score to win is ${scoreToWIn}, you currently have ${currentScore}`);
             checkWin()
             card.classList.add("matched")
           }
         })
 
-        setTimeout(flipBack, 1000);
+        setTimeout(flipBack, 500);
           function flipBack() {
             cards.forEach(function (card) {
               if(!card.classList.contains("matched")){
@@ -70,10 +70,10 @@ function trackWins(){
     totalWins: 0
   }
 
-  storedWins.Easy = currentWins.Easy;
-  storedWins.Medium = currentWins.Medium;
-  storedWins.Hard = currentWins.Hard;
-  storedWins.totalWins = currentWins.Easy + currentWins.Medium + currentWins.Hard
+  storedWins.Easy += currentWins.Easy;
+  storedWins.Medium += currentWins.Medium;
+  storedWins.Hard += currentWins.Hard;
+  storedWins.totalWins += currentWins.Easy + currentWins.Medium + currentWins.Hard
 
   localStorage.setItem('storedWins', JSON.stringify(storedWins))
 }
@@ -107,10 +107,10 @@ function checkWin(){
       currentWins.Hard++
     }
     currentScore = 0
+    trackWins();
+    loadWins();
   }
-  currentWins.totalWins = currentWins.Easy + currentWins.Medium + currentWins.Hard
-  winsTracker.textContent = currentWins.totalWins
-  trackWins()
+  
 }
 // for testing, add buttons to increase the wins for easy, medium, and hard then remove them once the function is created
 
@@ -180,3 +180,4 @@ document.querySelector("#devMenu")
   })
 
 loadWins()
+
